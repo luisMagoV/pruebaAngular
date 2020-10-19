@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Usuarios} from '../interfaces/usuario';
-import {UsuariosService} from '../services/usuarios.service';
+import {UsuarioService} from './shared/usuario.service';
+import { Usuarios} from './shared/usuario';
 
 @Component({
   selector: 'app-usuarios',
@@ -14,16 +14,10 @@ export class UsuariosComponent implements OnInit {
   usuarios: Usuarios[] = [];
 
 
-  constructor(public usuarioService: UsuariosService, public router: Router ) { }
+  constructor(public usuarioService: UsuarioService, public router: Router ) { }
 
   ngOnInit() {
-    this.usuarioService.getUsuarios()
-      .subscribe(
-        res => {
-          this.usuarios = res;
-        },
-        err => console.log(err)
-      )
+
   }
 
   deleteUsuario(): void {
