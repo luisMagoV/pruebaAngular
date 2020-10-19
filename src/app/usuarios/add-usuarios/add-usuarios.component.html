@@ -1,0 +1,36 @@
+<h2>Registrar Usuarios</h2>
+<form #usuarioForm="ngForm" (submit)="onSubmit(usuarioForm)" autocomplete="off">
+  <div class="form-group">
+    <input type="text" placeholder="Id" class="form-control" name="id" #id="ngModel" [(ngModel)]="addusuarioservice.formData.id" required >
+    <div class="validation-error" *ngIf="id.invalid && id.touched">Este campo es requerido.</div>
+
+    </div>
+    <div class="form-group">
+      <input type="text" placeholder="Nombre" class="form-control"  name="nombre" #nombre="ngModel" [(ngModel)]="addusuarioservice.formData.nombre" required >
+      <div class="validation-error" *ngIf="nombre.invalid && nombre.touched">Este campo es requerido.</div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Cedula" class="form-control"  name="cedula" #cedula="ngModel" [(ngModel)]="addusuarioservice.formData.cedula" required >
+        <div class="validation-error" *ngIf="cedula.invalid && cedula.touched">Este campo es requerido.</div>
+        </div>
+        <div class="form-group">
+          <input type="date" placeholder="fecha de Nacimiento" class="form-control"  name="fecha" #fecha="ngModel" [(ngModel)]="addusuarioservice.formData.fecha" required >
+          <div class="validation-error" *ngIf="fecha.invalid && fecha.touched">Este campo es requerido.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Email" class="form-control"  name="email" #email="ngModel" [(ngModel)]="addusuarioservice.formData.email" required >
+            <div class="validation-error" *ngIf="email.invalid && email.touched">Este campo es requerido.</div>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Telefono" class="form-control"  name="telefono" #telefono="ngModel" [(ngModel)]="addusuarioservice.formData.telefono" required >
+              <div class="validation-error" *ngIf="telefono.invalid && telefono.touched">Este campo es requerido.</div>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Organizacion" class="form-control"  name="organanizacion" #organizacion="ngModel" [(ngModel)]="addusuarioservice.formData.organizacion" required >
+                <div class="validation-error" *ngIf="organizacion.invalid && organizacion.touched">Este campo es requerido.</div>
+                </div>
+<div>
+  <button id="button" type="submit" class="btn btn-primary">Guardar</button>
+    <button  type="button" id="reset" class="btn btn-info" (click)="resetForm()">Reset</button>
+</div>
+</form>

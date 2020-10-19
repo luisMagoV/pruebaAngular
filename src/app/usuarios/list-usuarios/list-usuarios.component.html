@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+
+    <th scope="col">Id</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">cedula</th>
+    <th scope="col">email</th>
+    <th scope="col">Organzacion</th>
+        <th scope="col">Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let usu of addusuarioservice.list">
+    <td (click)="populateForm(usu)">{{usu.id}}</td>
+    <td (click)="populateForm(usu)">{{usu.nombre}}</td>
+    <td (click)="populateForm(usu)">{{usu.cedula}}</td>
+    <td (click)="populateForm(usu)">{{usu.email}}</td>
+    <td (click)="populateForm(usu)">{{usu.organizacion}}</td>
+    <td><button (click)="onDelete(usu.id)" class="btn btn-sm btn-outline-danger">X</button></td>
+  </tr>
+  </tbody>
+</table>
